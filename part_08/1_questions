@@ -1,30 +1,107 @@
-
 1) Describe the exception hierarchy.
-This is a test
+All objects are "Throwable" into either an Exception or Error
 
 2) What is a try/catch statement?
+a block of code where a catch statement is followed by a try statement. A Try block contains arguments
+where an exception might occur. The Catch block will handle the exception that was referred to in the
+Try block.
 
 3) Why do we use try/catch statements?
+In order to catch any possible exception or errors and fix them.
 
 4) Write a full example of a try/catch/finally statement that catches two distinct exceptions
 
+class CoffeeShop {
+    public static void main (String args []) {
+        int cups;
+        int customers;
+
+        try {
+        customers = 0
+        cups = 78 / customers
+
+        System.out.println ("Average coffee consumption per customer: " + cups);
+        }
+        catch (ArithmeticException exc) {
+            System.out.println ("Cannot divide by Zero!");
+        }
+
+        try {
+        int coffee [] = new int [16];
+        coffee [21] = 32;
+        }
+
+        catch (ArrayIndexOutOfBoundsException exc) {
+        System.out.println ("Index is out-of-bounds ");
+        }
+        finally {
+            System.out.println ("Exiting program");
+        }
+    }
+}
+
 5) What does it mean to "throw" an exception? How does it work?
+To pass an exception or error to a specific block of code where it can be fixed/handled.
 
 6) What happens if your application encounters an exception and you don't catch it or throw it?
+JVM will automatically pick up on it and alert you.
 
 7) When catching exception in an inheritance hierarchy, should you catch the subclass exception or the
 superclass exception first? Why?
+Subclass should be caught first since it would be missed if a Superclass exception was caught first, due to hierarchy and inheritance rules.
+Start local and go up.
 
 8) Write a nested try/catch statement.
 
+class WeeklyCoffee {
+    public static void main (String args []) {
+        int cups [] = {2, 27, 38, 19, 31, 23, 3, 3};
+        int guests [] = {0, 25, 33, 16, 29, 21, 0};
+
+        try {
+        for (int a = 0, a < cups.length; a++);
+
+           try {
+            System.out.println (cups[a] + " / " + guests[a]+ " is " + cups[a] / guests[a]);
+            }
+
+            catch (ArithmeticException exc) {
+            System.out.println (Can't divide by Zero!");
+            }
+
+            catch (ArrayIndexOutOfBoundsException exc) {
+            System.out.println ("Index is out-of-bounds ");
+            }
+        }
+    }
+}
+
 9) What does it mean to rethrow an exception?
+To pass the exception to another place to be handled later.
 
 10) What are the 7 methods that come with the Throwable class?
+Throwable fillnStackTrace()
+String getLocalizedMessage()
+String getMessage ()
+void printStackTrace ()
+void prinStrackTace (PrintStream stream)
+void prinStrackTace (PrintWriter stream)
+String toString ()
+
 
 11) What does the "finally" block do?
+It defines a block of code that will execute when a try/catch lock is left. It occurs at the end of a
+try/catch sequence.
 
 12) When is the finally block executed? Will it ever not be executed?
+Whenever execution leaves a try/catch block, regardless of what conditions cause it. The finally block
+is also executed if any code in the try/catch block return from the method.
 
 13) What are the three recently added features to Java exceptions?
+automatic resource management - automates the process of releasing a resource (ie file)
+when no longer needed.
 
+multi-catch - allows 2 or moore exceptions to be caught within the same catch statement.
+
+final rethrow (aka more precise rethrow) - where you can't assign another rethrow.
 

@@ -25,8 +25,16 @@ Using MySQLWorkbench do the following
 
 5) Write the SQL queries to accomplish the following: (write each of your queries below for review)
     - select all records from clients
-    - select all records from clients where car make = "Toyota"
+        SELECT *
+        FROM car_dealership.clients;
+    - select all records from clients (did you mean cars?)where car make = "Toyota"
+         SELECT *
+         FROM car_dealership.clients (or FROM car_dealership.cars)
+         WHERE make = 'Toyota';
     - use a join to select all makes and models that a dealer has sold
+         SELECT clients.carID, clients.dealerID, cars.make, cars.model
+         FROM clients
+         INNER JOIN cars ON clients.id = cars.id;
     - use a left join to select the first and last name of everyone who has bought a red car
     - use an insert statement to create a new record in each table
     - create a new table named "test" with at least two fields
