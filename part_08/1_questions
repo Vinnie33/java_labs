@@ -95,7 +95,7 @@ try/catch sequence.
 
 12) When is the finally block executed? Will it ever not be executed?
 Whenever execution leaves a try/catch block, regardless of what conditions cause it. The finally block
-is also executed if any code in the try/catch block return from the method.
+is also executed if any code in the try/catch block return from the method. It will never be not executed.
 
 13) What are the three recently added features to Java exceptions?
 automatic resource management - automates the process of releasing a resource (ie file)

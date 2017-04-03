@@ -9,17 +9,30 @@ Using MySQLWorkbench do the following
     - carID (refers to "id" in cars table)
     - dealerID (refers to user in users table who is the car dealer)
 
+    CREATE TABLE `car_dealership`.`clients` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `userID` VARCHAR(150) NOT NULL,
+      `carID` VARCHAR(150) NOT NULL,
+      `dealerID` VARCHAR(150) NOT NULL,
+      PRIMARY KEY (`id`));
+
 2) create a new table named "users" with the following fields
     - id (auto increment)
     - first name
     - last name
+
+    CREATE TABLE `car_dealership`.`users` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `first_name` VARCHAR(150) NOT NULL,
+      `last_name` VARCHAR(150) NOT NULL,
+      PRIMARY KEY (`id`));
 
 3) create a new table named "cars" with the following fields
     - id (auto increment)
     - make
     - model
     - color
-    - year
+    - year (had issue with making datatype "year()", program default was VARCHAR)
 
 4) populate these tables with at least 5 records each - the more the merrier
 
@@ -35,11 +48,31 @@ Using MySQLWorkbench do the following
          SELECT clients.carID, clients.dealerID, cars.make, cars.model
          FROM clients
          INNER JOIN cars ON clients.id = cars.id;
+
     - use a left join to select the first and last name of everyone who has bought a red car
+
+        SELECT u.first_name, u.last_name, c.color
+        FROM Users u
+        LEFT JOIN clients cl
+        ON u.id = cl.userID
+        JOIN cars c
+        ON c.id = cl.carID
+        WHERE c.color = "red";
+
     - use an insert statement to create a new record in each table
+
+
     - create a new table named "test" with at least two fields
+        CREATE TABLE shoes (
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        style VARCHAR (150),
+        color VARCHAR (150),
+        size DOUBLE,
+        );
     - use sql to drop the the "test" table
+        DROP TABLE shoes;
     - use sql to update a record in the "cars" table
+        UPDATE
 
 6) Using MySQLWorkbench, export the the "clients", "users" and "cars" schema with all objects and data into a
 self-contained sql file. - check the exported file into git
