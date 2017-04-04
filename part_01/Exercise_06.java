@@ -1,4 +1,4 @@
-package Part_01;
+package part_01;
 
 /**
  * Part 1 Exercise 6:
@@ -12,8 +12,14 @@ package Part_01;
 public class Exercise_06 {
 
     public static void main(String[] args) {
-        //...
 
-        //System.out.println(...);
+        for (int i = 1; i <= 18; i++) {
+            if (i % 2 != 0) {
+                if (i < 17)
+                    System.out.print(i + " + ");
+                else
+                    System.out.print(i);
+            }
+        }
     }
 }

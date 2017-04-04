@@ -1,4 +1,4 @@
-package Part_01;
+package part_01;
 
 /**
  * Part 1 Exercise 5:
@@ -10,7 +10,12 @@ package Part_01;
 public class Exercise_05 {
 
     public static void main(String[] arg) {
+        double a = 10.5;
+        double b = 4.2;
+        double c = 3.4;
+        double d = 86.9;
+        double e = 12.1;
 
-        //System.out.println(...);
+        System.out.println(((a*b)-(c*2)) / (d-e));
     }
 }

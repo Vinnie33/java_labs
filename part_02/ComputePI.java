@@ -1,4 +1,4 @@
-package Part_02;
+package part_02;
 
 /**
 *           Review and run this updated method to find PI

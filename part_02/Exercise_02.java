@@ -24,5 +24,9 @@ public class Exercise_02 {
         System.out.print("Enter length: ");
         double length = input.nextDouble();
 
+        area = radius * radius * 3.1415;
+        volume = area * length;
+        System.out.println("Area of a Cylinder = " + area);
+        System.out.println ("Volume of a Cylinder = " + volume);
     }
 }

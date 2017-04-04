@@ -1,4 +1,4 @@
-package Part_01;
+package part_01;
 
 /**
  * Part 1 Exercise 7:
@@ -10,7 +10,10 @@ package Part_01;
 public class Exercise_07 {
 
     public static void main(String[] args) {
-
-       //...
-    }
-}
+        double pi = 0;
+        for (int i = 1; i < 1000000000; i += 4) {
+            pi += 8.0 / (i * (i + 2L));
+        }
+        System.out.println(pi);
+            }
+        }

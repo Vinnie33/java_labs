@@ -1,4 +1,4 @@
-package Part_01;
+package part_01;
 
 /**
  * Part 1 Exercise 10:
@@ -10,9 +10,13 @@ package Part_01;
 public class Exercise_10 {
 
     public static void main(String[] strings) {
+        double distance = 12;
+        double time = 30.5 / 60;
+        double miles = distance / 1.6;
+        double mph = miles * time;
 
-        //...
-
+        System.out.println("A person who runs " + distance + " Kilometers " + "within 30.5 minutes, " +
+                "has an average speed of " + mph + " miles per hour");
     }
 
 }

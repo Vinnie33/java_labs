@@ -1,4 +1,4 @@
-package Part_01;
+package part_01;
 
 /**
  * Part 1 Exercise 8:
@@ -14,6 +14,11 @@ public class Exercise_08 {
 
     public static void main(String[] args) {
 
-        //...
+        double radius = 3.14;
+        double area = 3.14 * (radius*radius);
+        double perimeter = 3.14 * (radius*2);
+
+        System.out.println("A circle with a radius of " + radius + ", has an area of " + area + ", and perimeter of "
+        + perimeter);
     }
 }
