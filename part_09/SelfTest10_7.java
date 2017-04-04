@@ -14,7 +14,7 @@ public class SelfTest10_7 {
         FileOutputStream fout = null;
 
         if (args.length !=2) {
-            System.out.println("Usage: Copying File From To");
+            System.out.println("Usage: Hyphen From To");
             return;
         }
 

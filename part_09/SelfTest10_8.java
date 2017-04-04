@@ -13,7 +13,7 @@ public class SelfTest10_8 {
             int a;
 
             if (args.length !=2) {
-                System.out.println("Usage: Copying File From To");
+                System.out.println("Usage: CopyFile From To");
                 return;
             }
             try (FileReader fin = new FileReader(args[0]);
