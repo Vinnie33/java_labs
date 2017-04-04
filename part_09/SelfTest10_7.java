@@ -42,7 +42,7 @@ public class SelfTest10_7 {
                 if (fin != null) fout.close();
             }   catch (IOException exc){
                 System.out.print("Error closing output file");
-            }
+                }
             }
         }
     }

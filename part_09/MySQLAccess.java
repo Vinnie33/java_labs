@@ -76,10 +76,10 @@ public class MySQLAccess {
 
 
             // Remove again the insert comment
-//            preparedStatement = connection
-//                    .prepareStatement("delete from college.courses where course_name = ? ; ");
-//            preparedStatement.setString(1, "Database Design");
-//            preparedStatement.executeUpdate();
+            preparedStatement = connection
+                    .prepareStatement("delete from college.courses where course_name = ? ; ");
+            preparedStatement.setString(1, "Database Design");
+            preparedStatement.executeUpdate();
 
             resultSet = statement.executeQuery("select * from college.courses");
 
