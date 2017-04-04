@@ -16,15 +16,15 @@ public class SelfTest10_8 {
                 System.out.println("Usage: Copying File From To");
                 return;
             }
-            try (FileReader spaceFile = new FileReader(args[0]);
-                 FileWriter hyphenFile = new FileWriter(args[1]);)
+            try (FileReader fin = new FileReader(args[0]);
+                 FileWriter fout = new FileWriter(args[1]);)
             {
                 do {
-                    a = spaceFile.read();
+                    a = fin.read();
 
                     if ((char) a == ' ') a = '-';
 
-                    if (a != -1) hyphenFile.write(a);
+                    if (a != -1) fout.write(a);
                 }
                 while (a != -1);
         }   catch(IOException exc) {

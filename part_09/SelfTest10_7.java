@@ -10,8 +10,8 @@ public class SelfTest10_7 {
     public static void main(String[] args)
     {
         int a;
-        FileInputStream spaceFile = null;
-        FileOutputStream hyphenFile = null;
+        FileInputStream fin = null;
+        FileOutputStream fout = null;
 
         if (args.length !=2) {
             System.out.println("Usage: Copying File From To");
@@ -19,27 +19,27 @@ public class SelfTest10_7 {
         }
 
         try {
-            spaceFile = new FileInputStream(args[0]);
-            hyphenFile = new FileOutputStream(args[1]);
+            fin = new FileInputStream(args[0]);
+            fout = new FileOutputStream(args[1]);
 
             do {
-                a = spaceFile.read();
+                a = fin.read();
 
                 if ((char) a == ' ') a = '-';
 
-                if (a != -1) hyphenFile.write(a);
+                if (a != -1) fout.write(a);
             }
             while (a != -1);
         }   catch (IOException exc) {
             System.out.print("I/O Error: " + exc);
         }   finally {
             try {
-                if (spaceFile != null) spaceFile.close();
+                if (fin != null) fin.close();
             }   catch (IOException exc) {
                 System.out.print("Error closing input file");
             }
             try {
-                if (spaceFile != null) hyphenFile.close();
+                if (fin != null) fout.close();
             }   catch (IOException exc){
                 System.out.print("Error closing output file");
             }
