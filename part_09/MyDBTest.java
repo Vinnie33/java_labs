@@ -18,131 +18,156 @@ public class MyDBTest {
     public static void main(String[] args) {
 
         MyDBTest db = new MyDBTest();
-        String url = "jdbc:mysql://localhost";  // Defines the JDBC URL. Since we are creating a database,
-                                                // we are not specifying
-                                                // the database name in the URL.
+        try {
+            db.createDatabase();
+            db.createTable();
+            db.insertRecord1();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        String username = "Vinnie";     // Defines username and password to connect to database server.
-        String password = "Vinnie890";  // Do you need to define the password? Could you not declare it? ();
-        String sql = "CREATE DATABASE IF NOT EXISTS MyDBTest";    // SQL command to create a database in MySQL.
+    }
 
-        db.createTable ();
-        db.insertRecord1 ();
-        db.insertRecord2 ();
-        db.insertRecord3 ();
-        db.updateAngelfish();
-        db.deleteStarfish();
-        db.getDolphin();
-
-        try (Connection conn = DriverManager.getConnection (url, username, password);
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.execute();
-                } catch (SQLException e) {
-                    System.out.println("There was an error 1");
-                    e.printStackTrace();
+    public void createDatabase () throws Exception {
+        // Defines the JDBC URL. Since we are creating a database, we do not specify database name in the URL.
+        Class.forName("com.mysql.jdbc.Driver");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/",
+                "Vinnie", "Vinnie888");
+             PreparedStatement stmt = conn.prepareStatement("CREATE DATABASE IF NOT EXISTS MyDBTest")) {
+            stmt.execute();
+            System.out.println("Creating Database...");
+        } catch (SQLException e) {
+            System.out.println("There was an error with creating Database");
+            e.printStackTrace();
         }
     }
 
     // createTable()
-    public void createTable (){
+    public void createTable () throws Exception {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
 
-        String sql = "CREATE TABLE Bracelets " +    // SQL command to create a table in MySQL.
-                " id INTEGER not NULL Auto Increment, " +
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/MyDBTest?" +
+                "user=Vinnie&password=Vinnie888&useSSL=false");
+            statement = connection.createStatement();
+            preparedStatement = connection
+                    // SQL command to create a table in MySQL.
+                .prepareStatement("CREATE TABLE IF NOT EXISTS Bracelets (id INTEGER not NULL auto_increment, " +
                 " material VARCHAR(90), " +
                 " description VARCHAR(300), " +
                 " length INTEGER, " +
-                " PRIMARY KEY (id)";
-        try (Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/" +
-                "user=Vinnie&password=Vinnie890&useSSL=false");
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.execute();
-                } catch (SQLException e) {
-                    System.out.println("There was an error 2");
+                " PRIMARY KEY (id))");
+            preparedStatement.execute ();
+            System.out.println("Creating Table...");
+        } catch (SQLException e) {
+                    System.out.println("There was an error with Creating Table");
                     e.printStackTrace();
         }
     }
 
     // insertRecord1()
-    public void insertRecord1 () {
+    public void insertRecord1 () throws Exception {
 
-        String sql = "INSERT INTO Bracelets (name, material, description, length)" + //command to insert table values
-                "VALUES (Dolphin, Silver, Chain Link with Large Dolphin Charms, 6)";
-        try (Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/Bracelets?" +
-                    "user=Vinnie&password=Vinnie890&useSSL=false");
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.execute();
-                } catch (SQLException e) {
-                    System.out.println("There was an error 3");
-                    e.printStackTrace();
-            }
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/MyDBTest?" +
+                    "user=Vinnie&password=Vinnie888&useSSL=false");
+            statement = connection.createStatement();
+            preparedStatement = connection
+                    // SQL Command to insert table values
+                    .prepareStatement("INSERT INTO Bracelets (name, material, description, length)" +
+                            "VALUES (Dolphin, Silver, Chain Link with Large Dolphin Charms, 6)");
+            preparedStatement.execute();
+            System.out.println("Dolphin Record has been created");
+        } catch (SQLException e) {
+            System.out.println("There was an error with Creating Dolphin Record");
+            e.printStackTrace();
         }
+    }
 
     // insertRecord2()
-    public void insertRecord2 (){
+    public void insertRecord2 () throws Exception{
 
-        String sql = "INSERT INTO Bracelets (name, material, description, length)" + //command to insert table values
-                "VALUES (Starfish, Copper, Chain Link with Large Starfish Charms, 5)";
-        try (Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/Bracelets?" +
-                "user=Vinnie&password=Vinnie890&useSSL=false");
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.execute();
-                } catch (SQLException e) {
-                    System.out.println("There was an error 4");
-                    e.printStackTrace();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/MyDBTest?" +
+                    "user=Vinnie&password=Vinnie888&useSSL=false");
+            statement = connection.createStatement();
+            preparedStatement = connection
+                    // SQL Command to insert table values
+                    .prepareStatement("INSERT INTO Bracelets (name, material, description, length)" +
+                "VALUES (Starfish, Copper, Chain Link with Large Starfish Charms, 5)");
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            System.out.println("There was an error with Creating Table");
+            e.printStackTrace();
         }
     }
 
     // insertRecord3()
-    public void insertRecord3 (){
+    public void insertRecord3 () throws Exception{
 
-        String sql = "INSERT INTO Bracelets (name, material, description, length)" + //command to insert table values
-                "VALUES (Angelfish, Gold, Chain Link with Large Angelfish Charms, 7)";
-        try (Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/Bracelets?" +
-                "user=Vinnie&password=Vinnie890&useSSL=false");
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.execute();
-                } catch (SQLException e) {
-                    System.out.println("There was an error 5");
-                    e.printStackTrace();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/MyDBTest?" +
+                    "user=Vinnie&password=Vinnie888&useSSL=false");
+            statement = connection.createStatement();
+            preparedStatement = connection
+                    // SQL Command to insert table values
+                    .prepareStatement("INSERT INTO Bracelets (name, material, description, length)" +
+                            "VALUES (Angelfish, Gold, Chain Link with Large Angelfish Charms, 7)");
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            System.out.println("There was an error with Creating Table");
+            e.printStackTrace();
         }
     }
 
 // updateRecord Angelfish()
-    public void updateAngelfish () {
-        String sql = "UPDATE MyDBTest. Bracelets SET material = Platinum WHERE name = Angelfish";
-        try (Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/Bracelets?" +
-                "user=Vinnie&password=Vinnie890&useSSL=false");
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.execute();
+    public void updateAngelfish () throws Exception{
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/MyDBTest?/Bracelets?" +
+                    "user=Vinnie&password=Vinnie888&useSSL=false");
+            statement = connection.createStatement();
+            preparedStatement = connection
+                    // SQL Command to insert table values
+                    .prepareStatement("UPDATE MyDBTest. Bracelets SET material = Platinum WHERE name = Angelfish";
                 preparedStatement.executeUpdate();
                 } catch (SQLException e) {
-                    System.out.println("There was an error 6");
+                    System.out.println("There was an error with Updating Record");
                     e.printStackTrace();
             }
     }
 
 // deleteRecord Starfish()
-    public void deleteStarfish (){ // Note: Businesses never delete data, they just update row info to Boolean "true"
+    public void deleteStarfish ()throws Exception{
+                                    // Note: Businesses never delete data, they just update row info to Boolean "true"
                                     // under a "deleted" column
         String sql = "DELETE from Bracelets WHERE name = Starfish";
         try (Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/Bracelets?" +
                 "user=Vinnie&password=Vinnie890&useSSL=false");
              PreparedStatement stmt = conn.prepareStatement(sql)) {
                 stmt.execute();
-                preparedStatement.executeUpdate();
+                preparedStatement.execute();
             } catch (SQLException e) {
                 System.out.println("There was an error 7");
                 e.printStackTrace();
         }
     }
 // getRecord()
-    public void getDolphin (){
+    public void getDolphin ()throws Exception{
         String sql = "SELECT * from Bracelets WHERE name = Dolphin";
         try (Connection conn = DriverManager.getConnection ("jdbc:mysql://localhost/Bracelets?" +
                 "user=Vinnie&password=Vinnie890&useSSL=false");
              PreparedStatement stmt = conn.prepareStatement(sql)) {
                 stmt.execute();
-                preparedStatement.executeUpdate();
+                preparedStatement.execute();
             } catch (SQLException e) {
                 System.out.println("There was an error 8");
                 e.printStackTrace();
