@@ -14,6 +14,9 @@ import java.util.Scanner;
 public class Exercise_03 {
 
     public static void main(String[] args) {
+        System.out.println();
+        System.out.println("Provide the length in feet and this program will convert to meters.");
+        System.out.println();
 
         Scanner input = new Scanner(System.in);
 

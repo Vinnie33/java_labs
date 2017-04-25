@@ -1,4 +1,4 @@
-package Part_02;
+package part_02;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  *      Calculate investment value
  *
- *      Recieved the following args from user:
+ *      Receive the following args from user:
  *          - investment amount
  *          - interest rate in percentage
  *          - number of years to invest

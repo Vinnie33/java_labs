@@ -15,18 +15,23 @@ import java.util.Scanner;
 public class Exercise_02 {
 
     public static void main(String[] args) throws java.io.IOException {
+
+        System.out.println();
+        System.out.println("Provide the Radius & Length of a Cylinder and this program will calculate Area & Volume.");
+        System.out.println();
+
         double area, volume;
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter radius: ");
+        System.out.print("Enter the radius: ");
         double radius = input.nextDouble();
-        System.out.print("Enter length: ");
+        System.out.print("Enter the length: ");
         double length = input.nextDouble();
 
         area = radius * radius * 3.1415;
         volume = area * length;
-        System.out.println("Area of a Cylinder = " + area);
-        System.out.println ("Volume of a Cylinder = " + volume);
+        System.out.println("Area of a Cylinder: " + area);
+        System.out.println ("Volume of a Cylinder: " + volume);
     }
 }

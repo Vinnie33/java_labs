@@ -1,4 +1,4 @@
-package Part_02;
+package part_02;
 
 
 /**
@@ -9,4 +9,7 @@ package Part_02;
  */
 public class Exercise_10 {
 
+    public static void main(String[] args) throws java.io.IOException {
+
+    }
 }

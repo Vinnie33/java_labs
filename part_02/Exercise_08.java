@@ -1,4 +1,4 @@
-package Part_02;
+package part_02;
 
 import java.util.Scanner;
 
@@ -12,4 +12,14 @@ import java.util.Scanner;
  */
 public class Exercise_08 {
 
+    public static void main(String[] args) throws java.io.IOException {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a number from 0 to 1,000,000,000: ");
+        int number = input.nextInt();
+
+        System.out.println(number + " is the number you inputted");
+
+    }
 }

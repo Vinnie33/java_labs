@@ -3,8 +3,10 @@ Answer the following questions
 
 
 1) What is an instance variable?
+    An instance variable stores the value that will be used by a method object, whenever that method is called.
 
 2) How do you create a new object?
+
 
 3) After creating a new object, how do you set that objects instance variables?
 
