@@ -10,5 +10,14 @@ package part_02;
 public class Exercise_09 {
 
     public static void main(String[] args) throws java.io.IOException {
+        char x;
+        x = 'z';
+
+        do {
+            System.out.print(x-- + " ");
+        }
+        while (x <= 'z' && x >= 'a'); {
+            System.out.print(x);
+        }
     }
 }

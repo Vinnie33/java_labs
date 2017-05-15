@@ -13,13 +13,21 @@ import java.util.Scanner;
 public class Exercise_08 {
 
     public static void main(String[] args) throws java.io.IOException {
+        try {
 
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter a number from 0 to 1,000,000,000: ");
-        int number = input.nextInt();
 
-        System.out.println(number + " is the number you inputted");
+            int number = input.nextInt();
 
+            while (number >= 0 && number <= 1000000000) {
+                System.out.println(number + " is the number you inputted");
+                break;
+            }
+        } catch (Exception e) {
+            System.out.println("Input Error.");
+            System.out.println("Please try again and enter a number from 0 to 1,000,000,000.");
+        }
     }
 }

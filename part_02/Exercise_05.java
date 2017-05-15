@@ -17,84 +17,44 @@ public class Exercise_05 {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Please input a number between 0 and 10: ");
+        System.out.print("Please input a number between 1 and 9: ");
 
         int number = input.nextInt();
 
-        if (number >= 1 || number <= 9) {
-            switch (number) {
-                case 1:
-                    System.out.println("You entered: One");
-                    break;
-                case 2:
-                    System.out.println("You entered: Two");
-                    break;
-                case 3:
-                    System.out.println("You entered: Three");
-                    break;
-                case 4:
-                    System.out.println("You entered: Four");
-                    break;
-                case 5:
-                    System.out.println("You entered: Five");
-                    break;
-                case 6:
-                    System.out.println("You entered: Six");
-                    break;
-                case 7:
-                    System.out.println("You entered: Seven");
-                    break;
-                case 8:
-                    System.out.println("You entered: Eight");
-                    break;
-                case 9:
-                    System.out.println("You entered: Nine");
-                    break;
-            }
+        if (number == 1)
+            System.out.println("You entered: One");
 
-            if (number <= 0 || number >= 10)
-                System.out.println("Input Error. You entered an out-of-range number");
+        else if (number == 2)
+            System.out.println("You entered: Two");
+
+        else if (number == 3)
+            System.out.println("You entered: Three");
+
+        else if (number == 4)
+            System.out.println("You entered: Four");
+
+        else if (number == 5)
+            System.out.println("You entered: Five");
+
+        else if (number == 6)
+            System.out.println("You entered: Six");
+
+        else if (number == 7)
+            System.out.println("You entered: Seven");
+
+        else if (number == 8)
+            System.out.println("You entered: Eight");
+
+        else if (number == 9)
+            System.out.println("You entered: Nine");
+
+        else {
+            if (number < 1 && number > 9);
+            System.out.println("Input Error. Please try again and enter a number between 1 and 9.");
         }
-
-        else // what statement here would capture inputs of non-numbers (char, string etc)?
-            System.out.println("Input Error. You did not enter a number");
     }
 }
 
-
-/**
- *      Below program uses an If Else statement to execute the above.
- */
-//        if (number == 1)
-//            System.out.println("You entered: One");
-//
-//        else if (number == 2)
-//            System.out.println("You entered: Two");
-//
-//        else if (number == 3)
-//            System.out.println("You entered: Three");
-//
-//        else if (number == 4)
-//            System.out.println("You entered: Four");
-//
-//        else if (number == 5)
-//            System.out.println("You entered: Five");
-//
-//        else if (number == 6)
-//            System.out.println("You entered: Six");
-//
-//        else if (number == 7)
-//            System.out.println("You entered: Seven");
-//
-//        else if (number == 8)
-//            System.out.println("You entered: Eight");
-//
-//        else if (number == 9)
-//            System.out.println("You entered: Nine");
-//
-//        else
-//            System.out.println("You have an input error");
-//    }
 
 
 
